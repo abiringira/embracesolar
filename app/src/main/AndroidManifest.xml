@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:tools="http://schemas.android.com/tools"
+    package="com.pesachoice.agent.activities">
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="25"/>
+
+    <permission
+        android:name="com.pesachoice.billpay.service.PESABUS_APPROVED_ONLY"
+        android:description="@string/pesabus_approved"
+        android:label="terminate"
+        android:protectionLevel="dangerous"/>
+
+
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false"/>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/embrace_lg"
+        android:scaleType="fitXY"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:theme,android:label,android:allowBackup">
+
+        <service
+            android:name="com.pesachoice.billpay.business.service.PCPesabusClientImpl"
+            android:enabled="true"
+            android:permission="com.pesachoice.billpay.service.PESABUS_APPROVED_ONLY"/>
+
+
+        <receiver android:name="tests.com.pesachoice.billpay.business.helper.SignUpTestBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <activity android:name=".PCAgentSplashActivity"
+            android:screenOrientation="portrait"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".PCAgentMainActivity"
+            android:screenOrientation="portrait">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PCAgentLoginActivity"/>
+        </activity>
+
+        <activity android:name=".PCAgentLoginActivity"
+            android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PCAgentAppLauncher"/>
+        </activity>
+
+        <activity android:name=".PCAgentAppLauncher"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".PCAgentAccountDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".PCAgentVerifyPhoneActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pesachoice.billpay.activities.PCAppLauncher"/>
+        </activity>
+
+    </application>
+
+
+
+</manifest>

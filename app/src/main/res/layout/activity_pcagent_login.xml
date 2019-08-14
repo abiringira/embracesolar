@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:id="@+id/login_container">
+
+
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/windowBackground" >
+
+        <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+                android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|center_vertical"
+            android:gravity="center"
+            android:minHeight="@dimen/activity_button_height"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/login_types"
+                android:entries="@array/login_types"
+                android:ems="12"
+                android:minHeight="@dimen/activity_button_height"
+                android:layout_margin="@dimen/activity_default_margin"
+                style="@style/Widget.App.Login.Spinner">
+            </Spinner>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/loging_with_phone_number_layout"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:minHeight="@dimen/activity_button_height"
+                android:layout_marginLeft="@dimen/activity_default_margin"
+                android:layout_marginRight="@dimen/activity_default_margin"
+                android:layout_marginBottom="@dimen/activity_default_margin_small"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/countryPicker1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="50dp"
+
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/small_padding"
+                    android:paddingRight="@dimen/small_padding"
+                    android:singleLine="true"
+                    android:layout_gravity="right"
+                    android:background="@drawable/view_borders"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_marginLeft="@dimen/activity_default_margin"/>
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/sign_phone"
+                    android:inputType="phone"
+                    android:paddingLeft="@dimen/small_padding"
+                    android:paddingRight="@dimen/small_padding"
+                    android:minHeight="42dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/activity_default_margin"
+                    android:singleLine="true"
+                    android:background="@drawable/view_borders"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="12"
+                android:id="@+id/email"
+                android:textColor="@color/colorPrimary"
+                android:minHeight="@dimen/activity_button_height"
+                android:hint="@string/login_hint"
+                android:layout_marginLeft="@dimen/activity_default_margin"
+                android:layout_marginRight="@dimen/activity_default_margin" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="12"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/password"
+                android:layout_gravity="center_horizontal"
+                android:minHeight="@dimen/activity_button_height"
+                android:hint="@string/login_password"
+                android:layout_marginLeft="@dimen/activity_default_margin"
+                android:layout_marginRight="@dimen/activity_default_margin" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_submit"
+                android:id="@+id/submit"
+                android:hint="@string/login_submit"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginLeft="@dimen/activity_default_margin"
+                android:layout_marginRight="@dimen/activity_default_margin"
+                android:onClick="onLoginAction"
+                android:theme="@style/AppTheme.Button"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText"
+                android:layout_gravity="end"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/login_forgot"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginLeft="@dimen/activity_default_margin"
+                android:layout_marginRight="@dimen/activity_default_margin"
+                android:layout_marginTop="@dimen/activity_default_margin"
+                android:clickable="true"
+                android:onClick="onForgotPasswordAction"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

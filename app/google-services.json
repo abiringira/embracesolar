@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "772724794189",
+    "firebase_url": "https://pesachoice-agent.firebaseio.com",
+    "project_id": "pesachoice-agent",
+    "storage_bucket": "pesachoice-agent.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772724794189:android:9c887db35d712085",
+        "android_client_info": {
+          "package_name": "com.pesachoice.agent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772724794189-30k54jrknn6rdphm8lge1ldbd1pvrrv1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pesachoice.agent",
+            "certificate_hash": "9cdae8804c9ac4c62acfe5f90c7fe1e57bfb0e0c"
+          }
+        },
+        {
+          "client_id": "772724794189-vq50gui8ct24hpn9svrfmhl4cp1ig0o3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd7dGKYvCpIl9qnPaFAB9nSM4hdvD885w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772724794189-vq50gui8ct24hpn9svrfmhl4cp1ig0o3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

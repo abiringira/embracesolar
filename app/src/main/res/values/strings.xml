@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Embrace</string>
+    <!--    company_ID-->
+    <string name="company_Id">embracesolar</string>
+    <string name="login_powered">Copyright (c) 2018 Embrace Solar</string>
+    <string name="checkout_summary_section_title">Payment Transaction</string>
+    <string name="checkout_summary_account_label">Customer</string>
+    <string name="checkout_summary_receiver_label">Mobile No</string>
+    <string name="country_uganda_placeholder">+250 751-231-230</string>
+
+</resources>
